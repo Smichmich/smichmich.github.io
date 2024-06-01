@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מתכון לעוגת וניל</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body dir="rtl">
+    <div class="container">
+        <h1>מתכון לעוגת וניל</h1>
+        <ul id="ingredients">
+            <li><span>400</span> גרם קמח</li>
+            <li><span>200</span> גרם סוכר</li>
+            <li><span>120</span> גרם ביצים</li>
+            <li><span>200</span> גרם חמאה</li>
+            <li><span>240</span> גרם חלב</li>
+            <li><span>20</span> גרם תמצית וניל</li>
+            <li><span>20</span> גרם אבקת אפייה</li>
+            <li><span>10</span> גרם מלח</li>
+        </ul>
+        <div class="button-container">
+            <label for="multiplier">הכפל במספר:</label>
+            <input type="number" id="multiplier" min="1" value="1">
+            <button onclick="multiplyIngredients()">הכפל מרכיבים</button>
+        </div>
+        <h2>הוראות הכנה:</h2>
+        <ol>
+            <li>חממו את התנור ל-350 מעלות פרנהייט (175 מעלות צלזיוס). שימו שפתיים והקפידו על מחבת עגולה בקוטר 9 אינץ' בשמן ואבקת קמח.</li>
+            <li>בקערה גדולה לערבב את החמאה הרכה והסוכר הלבן עד שהתערובת הופכת קרמית ורכה.</li>
+            <li>הוסיפו את הביצים, אחת אחרי השנייה, ולערבב היטב אחרי כל הוספה. הוסיפו את תמצית הווניל ולערבב שוב.</li>
+            <li>בקערה נפרדת, לערבב יחד את הקמח, אבקת האפייה והמלח.</li>
+            <li>להוסיף את החומרים היבשים לתערובת הקרמית, להחליף ביניהם את החלב, מתחילים ומסיימים עם החומרים היבשים. לערבב עד שהתערובת מתמזגת.</li>
+            <li>לשפוך את הבצק לתוך מחבת העגולה שכבר הוכנה.</li>
+            <li>אפשר לאפות בתנור המחומם כ-25-30 דקות, או עד שמוצאים את קיסם המבחן יבש בתוך העוגה.</li>
+            <li>לתת לעוגה לקרר במחבת כשעה, ואז להעביר אותה לרשת רשת קרירה לפני שממרים עליה קיסמי הוספת הקרמה.</li>
+        </ol>
+        <p>תהנו מהעוגת וניל הטרייה והטעימה!</p>
+    </div>
+</body>
+<script>
+    function multiplyIngredients() {
+        const factor = document.getElementById("multiplier").value
+        let ingredientsAmounts = document.getElementById("ingredients").getElementsByTagName("span");
+        for (let i = 0; i < ingredientsAmounts.length; i++) {
+            ingredientsAmounts[i].innerHTML = ingredientsAmounts[i].innerHTML * factor
+        }
+    }
+</script>
+</html>
